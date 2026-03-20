@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at bottom, #0f2027, #203a43, #000);
+    color: white;
+    text-align: center;
+}
+
+iframe {
+    display: none;
+}
+
+/* Amplop */
+#envelope {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0f2027;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.envelope-body {
+    position: relative;
+    width: 220px;
+    height: 140px;
+    background: #e0c097;
+    border-radius: 6px;
+}
+
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #d4a373;
+    clip-path: polygon(0 0, 50% 60%, 100% 0);
+    transform-origin: top;
+    transition: 1s;
+}
+
+.letter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    top: 100%;
+    text-align: center;
+    padding-top: 50px;
+    transition: 1s;
+    color: black;
+}
+
+.open .flap {
+    transform: rotateX(180deg);
+}
+
+.open .letter {
+    top: 0;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: 1s;
+}
+
+/* Container */
+.container {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    padding: 0 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 40px;
+    color: gold;
+}
+
+.arab {
+    font-size: 26px;
+    margin: 20px 0;
+}
+
+.text {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Ketupat */
+.ketupat {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, green, lime);
+    position: absolute;
+    transform: rotate(45deg);
+    animation: float 5s infinite;
+}
+
+@keyframes float {
+    50% {transform: translateY(-40px) rotate(45deg);}
+}
+
+/* Bintang */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    50% {opacity:1;}
+}
+
+/* Kembang api */
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: explode 1.5s;
+}
+
+@keyframes explode {
+    to {transform: scale(20); opacity:0;}
+}
