@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idul Fitri - Keluarga Sulistiyo</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at bottom, #0f2027, #203a43, #000);
+    color: white;
+    text-align: center;
+}
+
+/* Musik disembunyikan */
+iframe {
+    display: none;
+}
+
+/* Container */
+.container {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    padding: 0 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 40px;
+    color: gold;
+    text-shadow: 0 0 20px gold;
+    margin-bottom: 10px;
+}
+
+.arab {
+    font-size: 26px;
+    direction: rtl;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* Ketupat */
+.ketupat {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, green, lime);
+    position: absolute;
+    transform: rotate(45deg);
+    animation: float 5s infinite ease-in-out;
+    box-shadow: 0 0 15px lime;
+}
+
+.ketupat::before, .ketupat::after {
+    content: "";
+    position: absolute;
+    background: yellowgreen;
+}
+
+.ketupat::before {
+    width: 100%;
+    height: 12px;
+    top: 30px;
+}
+
+.ketupat::after {
+    width: 12px;
+    height: 100%;
+    left: 30px;
+}
+
+@keyframes float {
+    0%,100% {transform: translateY(0) rotate(45deg);}
+    50% {transform: translateY(-40px) rotate(45deg);}
+}
+
+/* Bintang */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%,100% {opacity:0;}
+    50% {opacity:1;}
+}
+
+/* Kembang api */
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: explode 1.5s infinite;
+}
+
+@keyframes explode {
+    0% {transform: scale(1); opacity:1;}
+    100% {transform: scale(20); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Musik YouTube -->
+<iframe 
+    src="https://www.youtube.com/embed/dVFVzvnJc1U?autoplay=1&loop=1&playlist=dVFVzvnJc1U"
+    allow="autoplay">
+</iframe>
+
+<div class="container">
+    <h1>🌙 Selamat Idul Fitri 1446 H 🌙</h1>
+
+    <div class="arab">
+        تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ<br>
+        وَكُلُّ عَامٍ وَأَنْتُمْ بِخَيْرٍ
+    </div>
+
+    <div class="text">
+        <p><b>Keluarga Besar Sulistiyo</b></p>
+
+        <p>
+            Dengan penuh kerendahan hati, kami sekeluarga mengucapkan 
+            <b>Selamat Hari Raya Idul Fitri 1446 Hijriah</b>.
+        </p>
+
+        <p>
+            Di hari yang suci dan penuh berkah ini, kami memohon maaf yang sebesar-besarnya 
+            atas segala khilaf dan salah, baik dalam perkataan, perbuatan, maupun sikap 
+            yang disengaja ataupun yang tidak disengaja.
+        </p>
+
+        <p>
+            Mungkin ada kata yang tak berkenan, sikap yang kurang berkenan di hati, 
+            ataupun hal-hal yang tanpa kami sadari telah menyakiti.
+            Untuk itu, dengan tulus kami memohon dibukakan pintu maaf yang seluas-luasnya.
+        </p>
+
+        <p>
+            Semoga di hari kemenangan ini, kita semua kembali menjadi pribadi yang lebih baik, 
+            hati yang lebih bersih, serta hubungan yang semakin erat dalam kebersamaan dan kasih sayang.
+        </p>
+
+        <p>
+            Mari kita sambut lembaran baru dengan penuh keikhlasan, 
+            saling memaafkan, dan mempererat tali silaturahmi.
+        </p>
+
+        <p>
+            <b>Mohon maaf lahir dan batin 🙏</b><br>
+            Semoga Allah SWT senantiasa melimpahkan rahmat, kesehatan, 
+            dan keberkahan untuk kita semua.
+        </p>
+    </div>
+</div>
+
+<!-- Ketupat -->
+<div class="ketupat" style="left:10%; top:75%;"></div>
+<div class="ketupat" style="left:80%; top:80%;"></div>
+<div class="ketupat" style="left:50%; top:85%;"></div>
+
+<script>
+// Bintang
+for(let i=0;i<80;i++){
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random()*100 + "%";
+    star.style.left = Math.random()*100 + "%";
+    document.body.appendChild(star);
+}
+
+// Kembang api
+setInterval(()=>{
+    let fire = document.createElement("div");
+    fire.className = "firework";
+    fire.style.top = Math.random()*80 + "%";
+    fire.style.left = Math.random()*100 + "%";
+    fire.style.background = "hsl(" + Math.random()*360 + ",100%,50%)";
+    document.body.appendChild(fire);
+
+    setTimeout(()=>{fire.remove();},1500);
+},300);
+</script>
+
+</body>
+</html>
